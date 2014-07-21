@@ -19,6 +19,7 @@ import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.webkit.WebView.FindListener;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -53,10 +54,11 @@ public class ChatHeadService extends Service {
 		RetrievePackages getInstalledPackages = new RetrievePackages(getApplicationContext());
 		apps = getInstalledPackages.getInstalledApps(false);
 		
-		
+		//only the top most icon can be touched 
 		for(int i=0;i<apps.size();i++)
 		{
 		
+			
 		windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
 
 		chatHead = new ImageView(this);
@@ -96,6 +98,7 @@ public class ChatHeadService extends Service {
 					
 					WindowManager.LayoutParams paramsF = params[v.getId()];
 					
+					
 					switch (event.getAction()) {
 					case MotionEvent.ACTION_DOWN:
 
@@ -119,6 +122,7 @@ public class ChatHeadService extends Service {
 					case MotionEvent.ACTION_MOVE:
 						paramsF.x = initialX + (int) (event.getRawX() - initialTouchX);
 						paramsF.y = initialY + (int) (event.getRawY() - initialTouchY);
+						chatHead= (ImageView) v.findViewById(v.getId());
 						windowManager.updateViewLayout(chatHead, paramsF);
 						break;
 					}
