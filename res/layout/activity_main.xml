@@ -5,18 +5,23 @@
     android:paddingLeft="2dp"
     android:paddingRight="2dp"
     android:orientation="vertical" 
-    android:background="#ffffff">
+    android:background="#cccccc">
+
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="45dp"
         android:id="@+id/b"
-        android:text="@string/hello_world" />
+        android:background="#00C4CD"
+        android:text="Pin These" />
 
     <ListView
         android:id="@+id/lvlist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
     </ListView>
+
+    
+    
 
 </LinearLayout>

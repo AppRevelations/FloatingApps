@@ -2,37 +2,39 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" 
-    android:background="#ffffff">
-
+    android:background="#ffffff"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginBottom="5dp"
+    >
 
         <ImageView
             android:id="@+id/imageView1"
-            android:layout_marginLeft="5dp"
             android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
             android:src="@drawable/ic_launcher" />
 
         <CheckBox
             android:id="@+id/checkBox1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:button="@drawable/background_xml"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="8dp"
-            android:text="" />
+           	android:layout_marginLeft="20dp"
+           	android:layout_toRightOf="@+id/imageView1"
+           	android:layout_below="@+id/tvappname"
+            android:button="@drawable/background_xml" />
 
         <TextView
             android:id="@+id/tvappname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/checkBox1"
+            android:layout_alignTop="@+id/imageView1"
+            android:layout_marginLeft="20dp"
             android:layout_toRightOf="@+id/imageView1"
             android:text="AppName"
-            android:layout_marginLeft="10dp"
             android:textColor="#000000" />
 
 </RelativeLayout>

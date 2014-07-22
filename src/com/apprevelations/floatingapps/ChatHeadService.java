@@ -1,17 +1,10 @@
 package com.apprevelations.floatingapps;
 
 import java.util.ArrayList;
-import java.util.List;
 import android.app.Service;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.Bitmap.Config;
-import android.graphics.Canvas;
-import android.graphics.Path;
 import android.graphics.PixelFormat;
-import android.graphics.Rect;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.IBinder;
 import android.support.v7.internal.widget.ListPopupWindow;
@@ -19,9 +12,7 @@ import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
-import android.webkit.WebView.FindListener;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 
 public class ChatHeadService extends Service {
@@ -64,9 +55,7 @@ public class ChatHeadService extends Service {
 		chatHead = new ImageView(this);
 		chatHead.setId(i);
 		Drawable icon= apps.get(i).icon;
-		Bitmap bmp= drawableToBitmap(icon);
-		Bitmap b= getRoundedShape(bmp);
-		chatHead.setImageBitmap(b);
+		chatHead.setImageDrawable(icon);
 		
 		
 		params[i] = new WindowManager.LayoutParams(
@@ -156,42 +145,7 @@ public class ChatHeadService extends Service {
 	}
 	
 	}
-    
-    Bitmap getRoundedShape(Bitmap scaleBitmapImage) {
-	    int targetWidth = scaleBitmapImage.getWidth();
-	    int targetHeight =scaleBitmapImage.getHeight();
-	    Bitmap targetBitmap = Bitmap.createBitmap(targetWidth, 
-	                        targetHeight,Bitmap.Config.ARGB_8888);
-
-	    Canvas canvas = new Canvas(targetBitmap);
-	    Path path = new Path();
-	    path.addCircle(((float) targetWidth - 1) / 2,
-	        ((float) targetHeight - 1) / 2,
-	        (Math.min(((float) targetWidth), 
-	        ((float) targetHeight)) / 2),
-	        Path.Direction.CCW);
-
-	    canvas.clipPath(path);
-	    Bitmap sourceBitmap = scaleBitmapImage;
-	    canvas.drawBitmap(sourceBitmap, 
-	        new Rect(0, 0, sourceBitmap.getWidth(),
-	        sourceBitmap.getHeight()), 
-	        new Rect(0, 0, targetWidth, targetHeight), null);
-	    return targetBitmap;
-	}
 	
-    public static Bitmap drawableToBitmap (Drawable drawable) {
-        if (drawable instanceof BitmapDrawable) {
-            return ((BitmapDrawable)drawable).getBitmap();
-        }
-
-        Bitmap bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), Config.ARGB_8888);
-        Canvas canvas = new Canvas(bitmap); 
-        drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
-        drawable.draw(canvas);
-
-        return bitmap;
-    }
     
 	@Override
 	public void onDestroy() {

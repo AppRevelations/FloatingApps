@@ -1080,7 +1080,8 @@ containing a value of this type.
         public static final int background_xml=0x7f020057;
         public static final int cbchk_blue=0x7f020058;
         public static final int cbunchk_blue=0x7f020059;
-        public static final int ic_launcher=0x7f02005a;
+        public static final int ic_action_accept=0x7f02005a;
+        public static final int ic_launcher=0x7f02005b;
     }
     public static final class id {
         public static final int action_bar=0x7f05001c;
