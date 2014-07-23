@@ -4,9 +4,10 @@
     tools:context="com.apprevelations.floatingapps.MainActivity" >
 
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
+        android:id="@+id/action_done"
+        android:orderInCategory="1"
         android:title="Done"
+        app:showAsAction="ifRoom"
         android:icon="@drawable/ic_action_accept"
         
         />

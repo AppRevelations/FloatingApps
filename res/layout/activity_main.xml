@@ -8,12 +8,6 @@
     android:background="#cccccc">
 
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:id="@+id/b"
-        android:background="#00C4CD"
-        android:text="Pin These" />
 
     <ListView
         android:id="@+id/lvlist"
