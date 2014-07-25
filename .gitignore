@@ -3,7 +3,6 @@
 #################
 
 *.pydevproject
-.project
 .metadata
 bin/
 gen/
@@ -13,7 +12,6 @@ tmp/
 *.swp
 *~.nib
 local.properties
-.classpath
 .settings/
 .loadpath
 
