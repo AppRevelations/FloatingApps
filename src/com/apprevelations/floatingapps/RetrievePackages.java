@@ -4,19 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-import android.app.ActivityManager;
-import android.app.ActivityManager.RunningTaskInfo;
 import android.content.Context;
-import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.util.Log;
 
 public class RetrievePackages {
 	
